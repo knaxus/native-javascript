@@ -9,6 +9,10 @@
   - the value of the element
   - the index of the element
   - the Array object being traversed
+
+  ** Imp
+  There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.
+  
  * 
 */
 
