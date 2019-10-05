@@ -1,8 +1,9 @@
 /*
-  The toLowerCase() method returns the value of the string converted to lower case.
-  toLowerCase() does not affect the value of the string str itself.
+  The toUpperCase() method returns the value of the string converted to uppercase.
+  This method does not affect the value of the string itself since JavaScript strings are immutable.
 
-  MDN Link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+  MDN Link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
 
   Characters from A-Z have ASCII code from 65 - 90.
   And characters from a-z have ASCII code from 97-122.
