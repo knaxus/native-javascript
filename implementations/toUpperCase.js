@@ -10,11 +10,15 @@
   We're checking this condition to implement this function.
 */
 String.prototype.toUpperCase = function myToUpperCase() {
-  return this.split('').reduce((acc, character) => {
+  let upperCaseString = '';
+  for (let i = 0; i < this.length; i += 1) {
+    const character = this[i];
     const charCode = character.charCodeAt();
     if (charCode >= 97 && charCode <= 122) {
-      return acc + String.fromCharCode(charCode - 32);
+      upperCaseString += String.fromCharCode(charCode - 32);
+    } else {
+      upperCaseString += character;
     }
-    return acc + character;
-  }, '');
+  }
+  return upperCaseString;
 };
