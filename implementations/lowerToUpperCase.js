@@ -7,6 +7,7 @@
  *        value of Upper letter.
  *        Finally I used String.fromCharCode() to convert the ASCII value into character.
  * 
+ * 
  *  */
 
 function lowerToUpper(str){
