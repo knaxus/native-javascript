@@ -13,10 +13,11 @@ for(let chars of str){
     temp += chars;
   }
 }
-    
+    console.log(temp)
+    return temp;
 }
 
 
 // Demonstration
-// toLowerCase('AbCDEfg');
+toLowerCase('AbCDEfg');
 // abcdefg
