@@ -1,7 +1,12 @@
 /*
+  The toLowerCase() method returns the value of the string converted to lower case.
+  toLowerCase() does not affect the value of the string str itself.
+
+  MDN Link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
   Characters from A-Z have ASCII code from 65 - 90.
   And characters from a-z have ASCII code from 97-122.
-  We're checking this condition to implement this function
+  We're checking this condition to implement this function.
 */
 String.prototype.toUpperCase = function myToUpperCase() {
   return this.split('').reduce((acc, character) => {
