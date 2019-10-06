@@ -10,12 +10,12 @@
  * 
  *  */
 
-function lowerToUpper(str){
+String.prototype.toUpperCaseString = function (str){
     let upperCaseString = ""
-    for(let i=0;i<str.length;i++){
-        upperCaseString += String.fromCharCode(str.charCodeAt(i) - 32);
+    for(let i=0;i<this.length;i++){
+        upperCaseString += String.fromCharCode(this.charCodeAt(i) - 32);
     }
     return upperCaseString
 }
 
-lowerToUpper('hacktober fest is a one month festival of open source software');
+console.log('hacktober fest is a one month festival of open source software'.toUpperCaseString());
