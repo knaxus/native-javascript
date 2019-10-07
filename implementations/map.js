@@ -8,10 +8,10 @@
   - the Array object being traversed
 */
 
-Array.prototype.myMap = function(callback) {
+Array.prototype.myMap = function(callback, thisArg) {
     var mapArray = [];
     for (let i = 0; i < this.length; i++) {
-        mapArray.push(callback(this[i], i, this));
+        mapArray.push(callback.call(thisArg, this[i], i, this));
     }
     return mapArray;
 };
