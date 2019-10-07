@@ -5,3 +5,13 @@
 # Native JavaScript
 
 Let's implement the built in functions again! 
+
+## How to Contribute?
+
+- Try to use native functions and operators
+- Avoid ES6+ features
+- We will provide review to your implemenation
+- Your PR should contain commented test cases 
+- We'll add our test cases during the review as well.
+
+All the best
