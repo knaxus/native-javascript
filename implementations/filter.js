@@ -18,7 +18,7 @@
   If no elements pass the predicate callback, an empty array will be returned
 */
 
-Array.prototype.myFilter = function myFilter(callback, thisArg = this) {
+Array.prototype.myFilter = function myFilter(callback, thisArg) {
   const newArray = [];
   for (let i = 0; i < this.length; i += 1) {
     if (callback.call(thisArg, this[i], i, this)) {
