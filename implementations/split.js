@@ -12,19 +12,42 @@
   };
 */
 
-String.prototype.mysplit = function (delim) {
+String.prototype.mysplit = function (delim , limit) {
   // array used to store our output
-  var arrayOutput = [''];
+  let arrayOutput = [''];
 
-  // if separator is empty, return string as array
-  if (delim === "") return arrayOutput;
+  // return entire string as array if delim is null
+  if (delim == null) return arrayOutput;
+
+  // if delim is empty string, split each char
+  if (delim == '') {
+
+    // pop out empty member in arrayOutput
+    arrayOutput.pop();
+
+    for (let i = 0; i < this.length; i++) {
+      // check for limit parameter
+      if (i == limit && limit > 0) {
+        return arrayOutput;
+      }
+
+      // push each char as an array member
+      arrayOutput.push(this[i])
+    }
+    return  arrayOutput;
+  }
 
   // will keep track of elements in arrayOutput
-  var j = 0;
+  let j = 0;
 
-  for (var i = 0; i < this.length; i++) {
+  for (let i = 0; i < this.length; i++) {
+    // check for limit parameter
+    if (i == limit && limit > 0) {
+      return arrayOutput;
+    }
+
     // if delim found, push empty element into the array
-    if (this.charAt(i) == delim) {
+    if (this.charAt(i) == delim.charAt(0)) {
       // increase arrayOutput size by 1
       j++;
 
@@ -33,14 +56,22 @@ String.prototype.mysplit = function (delim) {
     }
     else {
       // adds a char to the arrayOutput elemeent
-      arrayOutput[j] += this.charAt(i);
+      if (j == 0) {
+        arrayOutput[j] += this.charAt(i);
+      } else {
+        arrayOutput[j] += this.charAt(i + (delim.length-1));
+      }
     }
   }
   return arrayOutput;
 };
 
 // quick example to implement
-var str = 'Hello2Bye';
-console.log(str.mysplit('2')); // expected: [ 'Hello', 'Bye' ]
-console.log(str.mysplit('')); // expected: [ '' ]
-console.log(str.mysplit(' ')); // expected: [ 'Hello2Bye' ]
+let str = 'Helo Bro';
+console.log(str.mysplit()); // expected: [ '' ]
+console.log(str.mysplit('l')); // expected: [ 'He', 'o Bro' ]
+console.log(str.mysplit('')); // expected: [ 'He', 'e', 'l', 'o', ' ', 'B', 'r', 'o' ]
+console.log(str.mysplit('l', 2)); // expected: [ 'He' ]
+console.log(str.mysplit(' ')); // expected: [ 'Hello', 'Bro' ]
+
+console.log(str.mysplit('elo')); // expected: [ 'H','bro' ]
