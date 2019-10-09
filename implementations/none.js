@@ -16,7 +16,7 @@
 
   If the predicate is fulfilled then the method will exit early (and return false).
 
-  Calling some on an empty array will return true.
+  Calling none on an empty array will return true.
 */
 Array.prototype.myNone = function myNone(predicate, thisArg){
     for(var i = 0 ; i < this.length ; ++i){

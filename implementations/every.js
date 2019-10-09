@@ -16,7 +16,7 @@
 
   If the predicate is not fulfilled then the method will exit early (and return false).
 
-  Calling some on an empty array will return true.
+  Calling every on an empty array will return true.
 */
 Array.prototype.myEvery = function myEvery(predicate, thisArg){
     for(var i = 0 ; i < this.length ; ++i){
