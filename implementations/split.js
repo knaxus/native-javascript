@@ -1,10 +1,10 @@
 //str = "val1|val2|val3"
-//str.split('|');
+//str.split('|',2);
 // output
-// ["val1", "val2", "val3"]
+// ["val1", "val2"]
 
 
-String.prototype.split = function(splitVal) {
+String.prototype.split = function(splitVal,limit) {
   const outputArr = [];
   const string = this;
   let nextVal = '';
@@ -38,5 +38,6 @@ String.prototype.split = function(splitVal) {
   }
 }
  outputArr.push(nextVal);
+ outputArr=outputArr.filter((data,i)=> return i < limit);
  return outputArr;
 }
