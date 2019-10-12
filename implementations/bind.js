@@ -7,11 +7,11 @@
   that wraps the original function object.
 */
 
-Function.prototype.altBind = function (someObj, ...outerFuncArguments1) {
+Function.prototype.altBind = function (someObj, ...outerFuncArguments) {
   const targetFunc = this;
 
   // return inner function
-  return function (...innerFuncArgs1) {
+  return function (...innerFuncArgs) {
 
     let propKey = Math.random().toString();
     while (someObj.hasOwnProperty(propKey)) {
@@ -20,8 +20,8 @@ Function.prototype.altBind = function (someObj, ...outerFuncArguments1) {
     someObj[propKey] = targetFunc;
 
     // prepend outer args to inner args
-    const result = someObj[propKey](...outerFuncArguments1, ...innerFuncArgs1);
+    const result = someObj[propKey](...outerFuncArguments, ...innerFuncArgs);
     delete someObj[propKey];
     return result;
-  }
-}
+  };
+};
